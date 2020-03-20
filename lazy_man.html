@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>tag工具</title>
+  <style>
+    body {
+      min-width: 200px;
+    }
+    .boxs {
+      padding: 10px;
+      font-size: 18px;
+    }
+    .boxs span {
+      font-size: 12px;
+      line-height: 20px;
+    }
+    .hor {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .btn {
+      display: block;
+      height: 28px;
+      width: 52px;
+      font-size: 12px;
+      background: #67c23a;
+      outline: none;
+      color: #fff;
+      border: 1px solid #67c23a;
+      border-radius: 4px;
+      margin-left: 10px;
+      text-align: center;
+      line-height: 28px;
+      transition: .3s;
+      cursor: pointer;
+    }
+    .btn:hover {
+      background: #85ce61;
+    }
+    .btn.red {
+      background: #f56c6c;
+      border: 1px solid #f56c6c;
+    }
+    .btn.red:hover {
+      background: #f78989;
+    }
+
+    .choose-btn {
+      display: none;
+    }
+
+    .choose-label {
+      box-shadow: rgba(0, 0, 0, .1) 0px 0px 0px 1px;
+      width: 40px;
+      height: 20px;
+      display: inline-block;
+      border-radius: 20px;
+      position: relative;
+      background-color: #f56c6c;
+      overflow: hidden;
+      margin-left: 10px;
+      font-size: 12px;
+      color: #fff;
+      line-height: 20px;
+      padding: 0 10px;
+      cursor: pointer;
+    }
+    .text-left {
+      text-align: left;
+    }
+    .text-right {
+      text-align: right;
+    }
+    .choose-label:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      width: 20px;
+      height: 20px;
+      display: inline-block;
+      border-radius: 20px;
+      background-color: #fff;
+      z-index: 20;
+      -webkit-transition: all 0.5s;
+      transition: all 0.5s;
+    }
+
+    .choose-btn:checked + label.choose-label:before {
+      left: 40px;
+    }
+
+    .choose-btn:checked + label.choose-label {
+      background-color: #67c23a;
+    }
+  </style>
+</head>
+<body>
+  <div class="boxs">
+    <div class="hor">
+      <div class="icons">pre</div>
+      <p id="tag_pre">hello</p>
+      <div class="btn send-msg" id="pre">填入</div>
+    </div>
+    <div class="hor">
+      <div class="icons">灰</div>
+      <p id="tag_gray">fucking</p>
+      <div class="btn send-msg" id="gray">填入</div>
+    </div>
+    <div class="hor">
+      <div class="icons"></div>
+      <p id="tag_normal">chrome</p>
+      <div class="btn send-msg" id="normal">填入</div>
+    </div>
+  </div>
+
+  <div class="boxs">
+    <div class="hor">
+      <!-- <div class="hor gray-switch">
+        <span>灰度开关</span>
+        <input type="checkbox" id="toggleGray" name="toggleGray" class="choose-btn">
+        <label for="toggleGray" class="choose-label text-right">OFF</label>
+      </div> -->
+      <div class="btn red" id="reload">刷新</div>
+    </div>
+  </div>
+
+
+  <!-- jquery版本2.4 -->
+  <script type="text/javascript" src="jquery.min.js"></script>
+  <script type="text/javascript" src="lazy_man.js"></script>
+</body>
+</html>

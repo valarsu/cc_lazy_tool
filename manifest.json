@@ -1,0 +1,17 @@
+{
+  "name": "cc_lazy_tool",
+  "description" : "inject tagName, switchover ccGrayFlag",
+  "version": "1.3.2",
+  "manifest_version": 2,
+  "browser_action": {
+    "default_popup": "lazy_man.html",
+    "default_icon": "tag.png"
+  },
+  "content_scripts": [{
+    "matches": ["https://code.vipkid.com.cn/*/*/tags/new"],
+    "js": ["jquery.min.js", "tag.js"]
+  }],
+  "permissions": [
+    "background", "tabs", "activeTab", "cookies", "*://*.vipkid.com.cn/*", "*://*.vipkid-qa.com.cn/*"
+  ]
+}
